@@ -1,0 +1,48 @@
+package student;
+
+import java.util.Scanner;
+
+public class Lab6L1 {
+
+      public static void main(String[] args) {
+            // create a Scanner and a String called name
+            Scanner myInput = new Scanner(System.in);
+            String name;
+
+            //create a do/while loop to read in students
+            do {
+                  //read in all the relevant input
+                  System.out.print("Please enter a student's name: ");
+                  name = myInput.nextLine();
+
+                  //only prompt them for the rest of the data if name!=done
+                  if (!name.equals("done"));{
+                        System.out.print("Please enter a student's sid: ");
+                        String sid = myInput.nextLine();
+                        System.out.print("Please enter a student's gpa: ");
+                        double gpa = myInput.nextDouble();
+                        System.out.print("Please enter a student's "+
+                                    "number of hours: ");
+                        int numberOfHours = myInput.nextInt();
+
+                        //throw away white space
+                        myInput.nextLine();
+
+                        //create a Student and print it out
+                        Student myStudent = new Student(name, sid, gpa, numberOfHours);
+                        System.out.println(myStudent);
+
+
+                  }
+
+
+
+            }while (!name.equals("done"));
+
+            //close the Scanner
+            myInput.close();
+
+
+      }
+
+}
